@@ -1,18 +1,34 @@
+#include <limits.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
- * main - entry point
- * Description: testing project
+ * main - Entry point
  *
- * Return: 0 success
-*/
+ * Return: Always 0
+ */
 int main(void)
 {
-	char *name = "Youssef";
-	int age = 21;
-	char GPA = 'A';
-	int mark = 87;
-	_printf("Hello My name is %s, I'm %d years old, MY GPA is %c, also my percentage is %i%%\n", name, age, GPA, mark);
+    int len;
+    int len2;
+    int neg_len1;
+    int neg_len2;
 
-	return (0);
+    len = _printf("Let's try to printf a simple sentence.\n");
+    len2 = printf("Let's try to printf a simple sentence.\n");
+    _printf("Length:[%d, %i]\n", len, len);
+    printf("Length:[%d, %i]\n", len2, len2);
+    neg_len1 = _printf("Negative:[%d]\n", -762534);
+    neg_len2 = printf("Negative:[%d]\n", -762534);
+    _printf("Character:[%c]\n", 'H');
+    printf("Character:[%c]\n", 'H');
+    _printf("String:[%s]\n", "I am a string !");
+    printf("String:[%s]\n", "I am a string !");
+    len = _printf("Percent:[%%]\n");
+    len2 = printf("Percent:[%%]\n");
+    _printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
+    _printf("neg_Len:[%d]\n", neg_len1);
+    printf("neg_Len:[%d]\n", neg_len2);
+    return (0);
 }

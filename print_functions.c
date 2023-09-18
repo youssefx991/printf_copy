@@ -49,15 +49,25 @@ int print_string_interval(char *start, char *end)
 */
 int print_int(va_list list)
 {
-	int num = va_arg(list, int);
+	int num = va_arg(list, int), sum;
 	char *str;
 
 	/*char str[(int)((ceil(log10(num)) + 1) * sizeof(char))];*/
 
 	/*sprintf(str, %d, num);*/
+	sum = 0;
+
+	if (num < 0)
+	{
+		sum += _putchar('-');
+		num *= -1;
+		
+	}
 	str = int_to_string(num);
 
-	return (_puts(str));
+	sum += _puts(str);
+
+	return (sum);
 }
 
 
